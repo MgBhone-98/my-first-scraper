@@ -1,16 +1,26 @@
+import requests
 import datetime
-import os
 
-def run_task():
-    now = datetime.datetime.now()
-    print(f"--- Task Started at {now} ---")
+def get_currency():
+    # Free API သုံးပြီး ငွေလဲနှုန်းယူမယ်
+    url = "https://open.er-api.com/v6/latest/USD"
     
-    # လက်ရှိ run နေတဲ့ OS က ဘာလဲဆိုတာ စစ်တာ
-    operating_system = os.name
-    print(f"Running on OS: {operating_system}")
-    
-    print("Hello Gemini, my Python app is working!")
-    print("---------------------------------------")
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        if data['result'] == 'success':
+            mmk_rate = data['rates']['MMK']
+            now = datetime.datetime.now()
+
+            print(f"--- Exchange Rate Update ---")
+            print(f"Date: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+            print(f"----------------------------")
+        else:
+            print("Error: Could not fetch data.")
+
+    except Exception as e:
+        print(f"An error occured : {e}")
 
 if __name__ == "__main__":
-    run_task()
+    get_currency()
