@@ -47,3 +47,26 @@ if __name__ == "__main__":
 ---------wrong now variable--------------
 PS D:\my-first-scraper> & C:\Users\winhtutbhone\AppData\Local\Programs\Python\Python313\python.exe d:/my-first-scraper/main.py
 An error occured : cannot access local variable 'now' where it is not associated with a value
+
+
+pip install requests
+(venv) root@mgbhone:~/my_project# git pull origin main
+fatal: not a git repository (or any of the parent directories): .git
+(venv) root@mgbhone:~/my_project# ls
+my-first-scraper  venv
+(venv) root@mgbhone:~/my_project# cd my-first-scraper/
+(venv) root@mgbhone:~/my_project/my-first-scraper# git pull origin main
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 1.06 KiB | 216.00 KiB/s, done.
+From https://github.com/MgBhone-98/my-first-scraper
+ * branch            main       -> FETCH_HEAD
+   d3e08f2..cb318a3  main       -> origin/main
+Updating d3e08f2..cb318a3
+Fast-forward
+ main.py     | 32 +++++++++++++++++++++-----------
+ python1.txt | 49 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 70 insertions(+), 11 deletions(-)
+ create mode 100644 python1.txt
